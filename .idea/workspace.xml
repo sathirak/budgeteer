@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bf7ee1e0-6365-4975-ad24-48f3c40a165b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budget/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/budget/src/main/java/com/example/AddLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/budget/src/main/java/com/example/AddLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budget/src/main/java/com/example/CheckLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/budget/src/main/java/com/example/CheckLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budget/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/budget/src/main/java/com/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budget/src/main/java/com/example/ShowLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/budget/src/main/java/com/example/ShowLog.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2blj8d9DF6UqFaITddkPBa5qk4j" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf7ee1e0-6365-4975-ad24-48f3c40a165b" name="Changes" comment="" />
+      <created>1706796402921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706796402921</updated>
+      <workItem from="1706796417526" duration="1000" />
+    </task>
+    <servers />
+  </component>
+</project>

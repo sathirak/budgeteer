@@ -1,0 +1,106 @@
+[ {
+  "id" : 1,
+  "date" : "2024-01-01",
+  "income" : true,
+  "amount" : 2000.0,
+  "category" : "salary",
+  "description" : "January salary"
+}, {
+  "id" : 2,
+  "date" : "2024-01-15",
+  "income" : false,
+  "amount" : 50.0,
+  "category" : "groceries",
+  "description" : "Grocery shopping"
+}, {
+  "id" : 3,
+  "date" : "2024-02-01",
+  "income" : true,
+  "amount" : 180.0,
+  "category" : "transport",
+  "description" : ""
+}, {
+  "id" : 4,
+  "date" : "2024-02-20",
+  "income" : false,
+  "amount" : 30.0,
+  "category" : "entertainment",
+  "description" : "Movie night"
+}, {
+  "id" : 5,
+  "date" : "2023-12-01",
+  "income" : true,
+  "amount" : 1100.0,
+  "category" : "salary",
+  "description" : "March salary"
+}, {
+  "id" : 6,
+  "date" : "2023-12-10",
+  "income" : false,
+  "amount" : 40.0,
+  "category" : "dining",
+  "description" : "Dinner with friends"
+}, {
+  "id" : 7,
+  "date" : "2023-11-01",
+  "income" : true,
+  "amount" : 1900.0,
+  "category" : "salary",
+  "description" : "April salary"
+}, {
+  "id" : 8,
+  "date" : "2023-11-25",
+  "income" : false,
+  "amount" : 60.0,
+  "category" : "utilities",
+  "description" : "Utility bill payment"
+}, {
+  "id" : 9,
+  "date" : "2023-10-01",
+  "income" : true,
+  "amount" : 2200.0,
+  "category" : "salary",
+  "description" : "May salary"
+}, {
+  "id" : 10,
+  "date" : "2023-10-15",
+  "income" : false,
+  "amount" : 45.0,
+  "category" : "groceries",
+  "description" : "Grocery shopping"
+}, {
+  "id" : 11,
+  "date" : "2023-09-01",
+  "income" : true,
+  "amount" : 1800.0,
+  "category" : "salary",
+  "description" : "June salary"
+}, {
+  "id" : 12,
+  "date" : "2023-09-18",
+  "income" : false,
+  "amount" : 25.0,
+  "category" : "entertainment",
+  "description" : "Concert tickets"
+}, {
+  "id" : 13,
+  "date" : "2024-02-01",
+  "income" : false,
+  "amount" : 10.0,
+  "category" : "food",
+  "description" : ""
+}, {
+  "id" : 14,
+  "date" : "2024-02-01",
+  "income" : false,
+  "amount" : 20.0,
+  "category" : "tyre",
+  "description" : ""
+}, {
+  "id" : 15,
+  "date" : "2024-02-01",
+  "income" : true,
+  "amount" : 11.0,
+  "category" : "sfsdf",
+  "description" : ""
+} ]

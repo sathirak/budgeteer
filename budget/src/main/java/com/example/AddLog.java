@@ -14,9 +14,9 @@ import java.util.Scanner;
 
 public class AddLog {
 
-    public static void main(String[] args) {
+    public void addLog() {
 
-        String file_path = "C:/Users/SathiraK/Desktop/SathiraK/Github/budget-tracker/budget/data.json";
+        String file_path = "data.json";
 
         Scanner scanner = new Scanner(System.in);
 
@@ -45,20 +45,20 @@ public class AddLog {
                     inputDate = today.format(DateTimeFormatter.ISO_LOCAL_DATE);
                 }
 
-                System.out.println("\u001b[32m[ > ]\u001B[0m date  > " + inputDate);
+                System.out.println("\n\u001b[32m[ > ]\u001B[0m date  > " + inputDate);
                 newEntry.put("date", inputDate);
 
-                System.out.print("\u001b[32m[ > ]\u001B[0m amount  > ");
+                System.out.print("\n\u001b[32m[ > ]\u001B[0m amount  > ");
                 double amount = scanner.nextDouble();
 
                 newEntry.put("income", amount >= 0 ? true : false);
 
                 newEntry.put("amount", Math.abs(amount));
 
-                System.out.print("\u001b[32m[ > ]\u001B[0m category  > ");
+                System.out.print("\n\u001b[32m[ > ]\u001B[0m category  > ");
                 newEntry.put("category", scanner.next());
 
-                System.out.print("\u001b[32m[ > ]\u001B[0m remarks  > ");
+                System.out.print("\n\u001b[32m[ > ]\u001B[0m remarks  > ");
                 String remarks = scanner.nextLine().trim();
 
                 newEntry.put("description", remarks);
@@ -69,7 +69,7 @@ public class AddLog {
 
                 objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(file_path), jsonArray);
 
-                System.out.println("\u001b[31m[ ! ]  New entry added successfully.");
+                System.out.println("\n\u001b[31m[ ! ]  New entry added successfully.");
 
             } else {
                 System.out.println("\u001b[31m[ ! ]  The JSON file does not contain an array.");
@@ -78,9 +78,6 @@ public class AddLog {
         } catch (IOException e) {
 
             e.printStackTrace();
-        } finally {
-
-            scanner.close();
         }
     }
 

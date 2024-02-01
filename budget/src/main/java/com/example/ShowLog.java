@@ -5,52 +5,56 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ShowLog {
 
-    public static void main(String[] args) {
-        String filePath = "C:/Users/SathiraK/Desktop/SathiraK/Github/budget-tracker/budget/data.json";
+    public void showLog() {
+        String filePath = "data.json";
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode jsonArray = objectMapper.readTree(new File(filePath));
 
             if (jsonArray.isArray()) {
-                // Clear the terminal
-                System.out.print("\033[H\033[2J");
 
-                System.out.println("-------------------------------------------------------------------------------------------------");
-                System.out.printf("| %-4s | %-10s | %-8s | %-15s | %-10s | %-30s |\n",
-                        "ID", "Date", "Type", "Category", "Amount", "Description");
-                System.out.println("-------------------------------------------------------------------------------------------------");
+                Main.clear_screen();
+
+                System.out.println();
 
                 double balance = 0.00;
 
                 for (JsonNode jsonNode : jsonArray) {
                     int id = jsonNode.get("id").asInt();
-                    String date = jsonNode.get("date").asText();
+                    String dateString = jsonNode.get("date").asText();
                     boolean income = jsonNode.get("income").asBoolean();
                     String category = jsonNode.get("category").asText();
                     double amount = jsonNode.get("amount").asDouble();
                     String description = jsonNode.get("description").asText();
 
-                    if (income) {
-                        balance += amount;
-                    } else {
-                        balance -= amount;
-                    }                    
+                    String incomeText = income ? "\u001B[32m[ + ]\u001B[0m" : "\u001B[31m[ - ]\u001B[0m";
+                    balance += income ? amount : -amount;
 
-                    System.out.printf("| %-4d | %-10s | %-8s | %-15s | %-10.2f | %-30s |\n",
-                            id, date, income, category, amount, description);
+                    // Format the date
+                    String formattedDate = formatDate(dateString);
+
+                    System.out.printf(" %-9s %-4d %-15s  %-8.2f  %-15s  %-35s\n",
+                            incomeText, id, category, amount, formattedDate, description);
                 }
 
-                System.out.println("-------------------------------------------------------------------------------------------------");
-                System.out.printf("Current Balance: %.2f\n", balance);
+                System.out.printf("\n\n\u001b[33m [ ! ]\u001B[0m  Current Balance: %.2f\u001B[0m\n", balance);
             } else {
                 System.out.println("The JSON file does not contain an array.");
             }
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    private String formatDate(String dateString) throws ParseException {
+        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+        return new SimpleDateFormat("dd-MMM-yyyy").format(date);
     }
 }
