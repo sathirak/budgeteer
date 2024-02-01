@@ -9,7 +9,6 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
-    kotlin("plugin.serialization") version "1.5.30"
 }
 
 repositories {
@@ -23,12 +22,11 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:31.1-jre")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("budget.tracker.App")
+    mainClass.set("budget.tracker.AppKt")
 }
 
 tasks.named<Test>("test") {
