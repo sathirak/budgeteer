@@ -25,8 +25,8 @@ public class CheckLog {
             // Check if the root node is an array
             if (jsonArray.isArray()) {
 
-                // Prompt the user to enter the ID they want to retrieve
-                System.out.print("Enter the ID to retrieve: ");
+                Main.clear_screen();
+                System.out.print("\n\u001b[31m[ > ]\u001B[0m log id to check  >   ");
                 int targetId = scanner.nextInt();
                 scanner.nextLine();
                 // Flag to check if the target ID was found
@@ -40,18 +40,21 @@ public class CheckLog {
                     // Check if the current entry has the target ID
                     if (id == targetId) {
                         String date = jsonNode.get("date").asText();
-                        String type = jsonNode.get("type").asText();
+                        String income = jsonNode.get("income").asText();
                         String category = jsonNode.get("category").asText();
                         double amount = jsonNode.get("amount").asDouble();
                         String description = jsonNode.get("description").asText();
 
-                        // Print details for the entry with the target ID
-                        System.out.println("ID: " + id);
-                        System.out.println("Date: " + date);
-                        System.out.println("Type: " + type);
-                        System.out.println("Category: " + category);
-                        System.out.println("Amount: " + amount);
-                        System.out.println("Description: " + description);
+                        Main.clear_screen();
+
+                        System.out.println("\n ");
+                        System.out.println("\u001b[30m     [ ###  details for log id " + id + "  ### ]   \u001B[0m");
+                        System.out.println("\n ");
+                        System.out.println("\u001b[36m[ > ]\u001B[0m date      > " + date);
+                        System.out.println("\u001b[36m[ > ]\u001B[0m income    > " + income);
+                        System.out.println("\u001b[36m[ > ]\u001B[0m category  > " + category);
+                        System.out.println("\u001b[36m[ > ]\u001B[0m amount    > " + amount);
+                        System.out.println("\u001b[36m[ > ]\u001B[0m summary   > " + description);
                         System.out.println();
 
                         // Set the flag to true, indicating the target ID was found
@@ -74,7 +77,6 @@ public class CheckLog {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            // Close the Scanner to prevent resource leaks
             scanner.close();
         }
     }

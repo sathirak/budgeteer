@@ -8,13 +8,15 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class AddLog {
 
     public static void main(String[] args) {
 
-        String filePath = "C:/Users/SathiraK/Desktop/SathiraK/Github/budget-tracker/budget/data.json";
+        String file_path = "C:/Users/SathiraK/Desktop/SathiraK/Github/budget-tracker/budget/data.json";
 
         Scanner scanner = new Scanner(System.in);
 
@@ -22,49 +24,59 @@ public class AddLog {
 
             ObjectMapper objectMapper = new ObjectMapper();
 
-            JsonNode jsonArray = objectMapper.readTree(new File(filePath));
+            JsonNode jsonArray = objectMapper.readTree(new File(file_path));
 
             if (jsonArray.isArray()) {
 
+                Main.clear_screen();
+
                 ObjectNode newEntry = JsonNodeFactory.instance.objectNode();
 
-                System.out.print("Enter new ID: ");
-                int id = scanner.nextInt();
+                int newId = generateNewId(jsonArray);
+                newEntry.put("id", newId);
 
-                if (idExists(jsonArray, id)) {
-                    System.out.println("ID " + id + " already exists in the JSON file.");
-                    return;
+                System.out.println("\u001b[32m[ > ]\u001B[0m id  > " + newId);
+
+                System.out.print("\u001b[36m[ i ]  enter date or <enter> for today");
+                String inputDate = scanner.nextLine().trim();
+
+                if (inputDate.isEmpty()) {
+                    LocalDate today = LocalDate.now();
+                    inputDate = today.format(DateTimeFormatter.ISO_LOCAL_DATE);
                 }
 
-                newEntry.put("id", id);
+                System.out.println("\u001b[32m[ > ]\u001B[0m date  > " + inputDate);
+                newEntry.put("date", inputDate);
 
-                System.out.print("Enter date (YYYY-MM-DD): ");
-                newEntry.put("date", scanner.next());
+                System.out.print("\u001b[32m[ > ]\u001B[0m amount  > ");
+                double amount = scanner.nextDouble();
 
-                System.out.print("Enter type (income/expense): ");
-                newEntry.put("type", scanner.next());
+                newEntry.put("income", amount >= 0 ? true : false);
 
-                System.out.print("Enter category: ");
+                newEntry.put("amount", Math.abs(amount));
+
+                System.out.print("\u001b[32m[ > ]\u001B[0m category  > ");
                 newEntry.put("category", scanner.next());
 
-                System.out.print("Enter amount: ");
-                newEntry.put("amount", scanner.nextDouble());
+                System.out.print("\u001b[32m[ > ]\u001B[0m remarks  > ");
+                String remarks = scanner.nextLine().trim();
 
-                System.out.print("Enter description: ");
-                newEntry.put("description", scanner.next());
+                newEntry.put("description", remarks);
+
                 scanner.nextLine();
 
                 ((ArrayNode) jsonArray).add(newEntry);
 
-                objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath), jsonArray);
+                objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(file_path), jsonArray);
 
-                System.out.println("New entry added successfully.");
+                System.out.println("\u001b[31m[ ! ]  New entry added successfully.");
 
             } else {
-                System.out.println("The JSON file does not contain an array.");
+                System.out.println("\u001b[31m[ ! ]  The JSON file does not contain an array.");
             }
 
         } catch (IOException e) {
+
             e.printStackTrace();
         } finally {
 
@@ -72,15 +84,14 @@ public class AddLog {
         }
     }
 
-    private static boolean idExists(JsonNode jsonArray, int targetId) {
+    private static int generateNewId(JsonNode jsonArray) {
+        int maxId = 0;
+
         for (JsonNode jsonNode : jsonArray) {
             int id = jsonNode.get("id").asInt();
-            if (id == targetId) {
-                return true;
-            }
+            maxId = Math.max(maxId, id);
         }
-        return false;
-    }
-    
-}
 
+        return maxId + 1;
+    }
+}

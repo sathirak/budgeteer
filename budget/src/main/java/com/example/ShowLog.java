@@ -24,25 +24,24 @@ public class ShowLog {
                         "ID", "Date", "Type", "Category", "Amount", "Description");
                 System.out.println("-------------------------------------------------------------------------------------------------");
 
-                double balance = 0.0;
+                double balance = 0.00;
 
                 for (JsonNode jsonNode : jsonArray) {
                     int id = jsonNode.get("id").asInt();
                     String date = jsonNode.get("date").asText();
-                    String type = jsonNode.get("type").asText();
+                    boolean income = jsonNode.get("income").asBoolean();
                     String category = jsonNode.get("category").asText();
                     double amount = jsonNode.get("amount").asDouble();
                     String description = jsonNode.get("description").asText();
 
-                    // Update the balance based on the type of entry (income or expense)
-                    if ("income".equalsIgnoreCase(type)) {
+                    if (income) {
                         balance += amount;
-                    } else if ("expense".equalsIgnoreCase(type)) {
+                    } else {
                         balance -= amount;
-                    }
+                    }                    
 
                     System.out.printf("| %-4d | %-10s | %-8s | %-15s | %-10.2f | %-30s |\n",
-                            id, date, type, category, amount, description);
+                            id, date, income, category, amount, description);
                 }
 
                 System.out.println("-------------------------------------------------------------------------------------------------");

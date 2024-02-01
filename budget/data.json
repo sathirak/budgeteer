@@ -1,43 +1,84 @@
 [ {
   "id" : 1,
   "date" : "2024-01-01",
-  "type" : "expense",
+  "income" : false,
   "category" : "Groceries",
   "amount" : 50.0,
   "description" : "Weekly grocery shopping"
 }, {
   "id" : 2,
   "date" : "2024-01-05",
-  "type" : "income",
+  "income" : false,
   "category" : "Salary",
   "amount" : 2500.0,
   "description" : "Monthly salary"
 }, {
   "id" : 3,
   "date" : "2024-01-10",
-  "type" : "expense",
+  "income" : false,
   "category" : "Dining Out",
   "amount" : 80.0,
   "description" : "Dinner with friends"
 }, {
   "id" : 4,
   "date" : "2024-01-15",
-  "type" : "income",
+  "income" : false,
   "category" : "Freelancing",
   "amount" : 500.0,
   "description" : "Web development project"
 }, {
   "id" : 6,
   "date" : "2002-12-03",
-  "type" : "income",
+  "income" : false,
   "category" : "salary",
   "amount" : 40000.0,
   "description" : "Monthly"
 }, {
   "id" : 5,
   "date" : "2023-02-1",
-  "type" : "income",
+  "income" : false,
   "category" : "vat",
   "amount" : 200.0,
   "description" : "usydfvkujdsfv"
+}, {
+  "id" : 7,
+  "income" : false,
+  "category" : "travel",
+  "amount" : 10.0,
+  "description" : "s"
+}, {
+  "id" : 8,
+  "date" : "2024-02-01",
+  "income" : false,
+  "category" : "eda",
+  "amount" : 122.0,
+  "description" : "fsdf"
+}, {
+  "id" : 9,
+  "date" : "2024-02-01",
+  "income" : true,
+  "amount" : 1000.0,
+  "category" : "travel",
+  "description" : "fdsfsf"
+}, {
+  "id" : 10,
+  "date" : "2024-02-01",
+  "income" : false,
+  "amount" : 500.0,
+  "category" : "travel",
+  "description" : "sfs"
+}, {
+  "id" : 11,
+  "date" : "2024-02-01",
+  "income" : true,
+  "amount" : 1000.0,
+  "category" : "travel",
+  "description" : ""
+}, {
+  "id" : 12,
+  "date" : "2024-02-01",
+  "income" : true,
+  "amount" : 1000.0,
+  "category" : "work",
+  "description" : ""
 } ]
