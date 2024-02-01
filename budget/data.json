@@ -1,0 +1,43 @@
+[ {
+  "id" : 1,
+  "date" : "2024-01-01",
+  "type" : "expense",
+  "category" : "Groceries",
+  "amount" : 50.0,
+  "description" : "Weekly grocery shopping"
+}, {
+  "id" : 2,
+  "date" : "2024-01-05",
+  "type" : "income",
+  "category" : "Salary",
+  "amount" : 2500.0,
+  "description" : "Monthly salary"
+}, {
+  "id" : 3,
+  "date" : "2024-01-10",
+  "type" : "expense",
+  "category" : "Dining Out",
+  "amount" : 80.0,
+  "description" : "Dinner with friends"
+}, {
+  "id" : 4,
+  "date" : "2024-01-15",
+  "type" : "income",
+  "category" : "Freelancing",
+  "amount" : 500.0,
+  "description" : "Web development project"
+}, {
+  "id" : 6,
+  "date" : "2002-12-03",
+  "type" : "income",
+  "category" : "salary",
+  "amount" : 40000.0,
+  "description" : "Monthly"
+}, {
+  "id" : 5,
+  "date" : "2023-02-1",
+  "type" : "income",
+  "category" : "vat",
+  "amount" : 200.0,
+  "description" : "usydfvkujdsfv"
+} ]
