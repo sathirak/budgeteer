@@ -113,13 +113,13 @@ public class AddLog {
 
             if (categoriesJson.has("categories")) {
 
-                System.out.println("\n\u001b[30m");
+                System.out.println("\n");
 
                 categoriesJson.get("categories").fields().forEachRemaining(entry -> {
                     System.out.println(entry.getKey() + " => " + entry.getValue().asText());
                 });
 
-                System.out.println("\n\u001B[0m");
+                System.out.println("\n");
 
             } else {
                 System.out.println("\u001b[31m[ ! ]\u001B[0m  Invalid meta.json format.");
