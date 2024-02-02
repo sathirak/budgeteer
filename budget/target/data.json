@@ -1,11 +1,4 @@
 [ {
-  "id" : 1,
-  "date" : "2024-01-01",
-  "income" : true,
-  "amount" : 2000.0,
-  "category" : "salary",
-  "description" : "January salary"
-}, {
   "id" : 2,
   "date" : "2024-01-15",
   "income" : false,
@@ -143,6 +136,13 @@
   "date" : "2024-02-02",
   "income" : false,
   "amount" : 100.0,
+  "category" : "other",
+  "description" : ""
+}, {
+  "id" : 25,
+  "date" : "2024-02-02",
+  "income" : true,
+  "amount" : 234.0,
   "category" : "other",
   "description" : ""
 } ]

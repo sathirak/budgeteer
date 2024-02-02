@@ -14,9 +14,7 @@ import java.util.Scanner;
 
 public class AddLog {
 
-    public void addLog() {
-
-        String file_path = "data.json";
+    public void addLog(String data_path, String meta_path) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -24,7 +22,7 @@ public class AddLog {
 
             ObjectMapper objectMapper = new ObjectMapper();
 
-            JsonNode jsonArray = objectMapper.readTree(new File(file_path));
+            JsonNode jsonArray = objectMapper.readTree(new File(data_path));
 
             if (jsonArray.isArray()) {
 
@@ -57,7 +55,7 @@ public class AddLog {
 
                 System.out.print("\n\u001b[32m[ > ]\u001B[0m category  > ");
 
-                getCategory();
+                getCategory(meta_path);
 
                 String categoryShortcut;
         
@@ -82,7 +80,7 @@ public class AddLog {
 
                 ((ArrayNode) jsonArray).add(newEntry);
 
-                objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(file_path), jsonArray);
+                objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(data_path), jsonArray);
 
                 System.out.println("\n\u001b[31m[ ! ]\u001B[0m  New entry added successfully.");
 
@@ -107,12 +105,11 @@ public class AddLog {
         return maxId + 1;
     }
 
-    private void getCategory() {
-        String categoriesFilePath = "meta.json";
+    private void getCategory(String meta_path) {
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode categoriesJson = objectMapper.readTree(new File(categoriesFilePath));
+            JsonNode categoriesJson = objectMapper.readTree(new File(meta_path));
 
             if (categoriesJson.has("categories")) {
 
@@ -133,11 +130,11 @@ public class AddLog {
     }
 
     private String getCategoryFromShortcut(String shortcut) {
-        String categoriesFilePath = "meta.json";
+        String meta_path = "meta.json";
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode categoriesJson = objectMapper.readTree(new File(categoriesFilePath));
+            JsonNode categoriesJson = objectMapper.readTree(new File(meta_path));
 
             if (categoriesJson.has("categories")) {
                 JsonNode categoryNode = categoriesJson.get("categories").get(shortcut);

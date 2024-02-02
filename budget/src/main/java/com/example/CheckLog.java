@@ -9,10 +9,7 @@ import java.util.Scanner;
 
 public class CheckLog {
 
-    public void checkLog() {
-
-        String filePath = "data.json";
-
+    public void checkLog(String data_path) {
         
         Scanner scanner = new Scanner(System.in);
 
@@ -20,7 +17,7 @@ public class CheckLog {
 
             ObjectMapper objectMapper = new ObjectMapper();
 
-            JsonNode jsonArray = objectMapper.readTree(new File(filePath));
+            JsonNode jsonArray = objectMapper.readTree(new File(data_path));
 
             
             if (jsonArray.isArray()) {

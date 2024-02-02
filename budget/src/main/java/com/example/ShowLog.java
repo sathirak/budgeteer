@@ -11,12 +11,11 @@ import java.util.Date;
 
 public class ShowLog {
 
-    public void showLog() {
-        String filePath = "data.json";
+    public void showLog(String data_path) {
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode jsonArray = objectMapper.readTree(new File(filePath));
+            JsonNode jsonArray = objectMapper.readTree(new File(data_path));
 
             if (jsonArray.isArray()) {
 
