@@ -76,20 +76,6 @@
   "category" : "salary",
   "description" : "June salary"
 }, {
-  "id" : 12,
-  "date" : "2023-09-18",
-  "income" : false,
-  "amount" : 25.0,
-  "category" : "entertainment",
-  "description" : "Concert tickets"
-}, {
-  "id" : 13,
-  "date" : "2024-02-01",
-  "income" : false,
-  "amount" : 10.0,
-  "category" : "food",
-  "description" : ""
-}, {
   "id" : 14,
   "date" : "2024-02-01",
   "income" : false,
@@ -102,5 +88,61 @@
   "income" : true,
   "amount" : 11.0,
   "category" : "sfsdf",
+  "description" : ""
+}, {
+  "id" : 16,
+  "date" : "2024-02-02",
+  "income" : true,
+  "amount" : 100.0,
+  "category" : "transport",
+  "description" : ""
+}, {
+  "id" : 17,
+  "date" : "2024-02-02",
+  "income" : true,
+  "amount" : 12.0,
+  "category" : "food",
+  "description" : ""
+}, {
+  "id" : 18,
+  "date" : "2024-02-02",
+  "income" : false,
+  "amount" : 90.0,
+  "category" : "transport",
+  "description" : ""
+}, {
+  "id" : 19,
+  "date" : "2024-02-02",
+  "income" : false,
+  "amount" : 45.0,
+  "category" : "Transport",
+  "description" : ""
+}, {
+  "id" : 20,
+  "date" : "2024-02-02",
+  "income" : true,
+  "amount" : 243.0,
+  "category" : "Transport",
+  "description" : ""
+}, {
+  "id" : 21,
+  "date" : "2024-02-02",
+  "income" : true,
+  "amount" : 23.0,
+  "category" : "Food",
+  "description" : ""
+}, {
+  "id" : 22,
+  "date" : "2024-02-02",
+  "income" : true,
+  "amount" : 12.0,
+  "category" : "Food",
+  "description" : ""
+}, {
+  "id" : 23,
+  "date" : "2024-02-02",
+  "income" : true,
+  "amount" : 3000.0,
+  "category" : "Food",
   "description" : ""
 } ]

@@ -69,7 +69,7 @@ public class ScanLog {
             if (jsonArray.isArray()) {
                 Main.clear_screen();
 
-                System.out.println("\n\u001b[32m[ + ] Logs for " + month + "/" + year + ":\u001B[0m");
+                System.out.println("\n\u001b[32m[ + ] Logs for " + month + "/" + year + ":\u001B[0m\n\n");
 
                 double totalIncome = 0.0;
                 double totalExpense = 0.0;
@@ -93,10 +93,10 @@ public class ScanLog {
 
 
                         if (income) {
-                            System.out.println("\u001b[32m[ + ]\u001B[0m Amount: +" + category);
+                            System.out.println("\u001b[32m[ + ]\u001B[0m " + category);
                             totalIncome += amount;
                         } else {
-                            System.out.println("\u001b[31m[ - ]\u001B[0m Amount: -" + category);
+                            System.out.println("\u001b[31m[ - ]\u001B[0m " + category);
                             totalExpense += amount;
                         }
 

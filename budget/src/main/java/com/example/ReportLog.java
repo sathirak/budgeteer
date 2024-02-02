@@ -24,7 +24,6 @@ public class ReportLog {
                 Main.clear_screen();
 
                 int max_graph_income = 0;
-                int pre_graph_income = 0;
 
                 // Iterate over the last 12 months
                 for (int i = 0; i < 12; i++) {
@@ -38,14 +37,12 @@ public class ReportLog {
                         graph_income = graph_income*(-1);
                     }
 
-                    if (graph_income > pre_graph_income) {
+                    if (graph_income > max_graph_income) {
                         max_graph_income = graph_income;
                     }
 
-                    pre_graph_income = graph_income;
                 }
 
-                
 
                 for (int i = 0; i < 12; i++) {
 
@@ -61,6 +58,7 @@ public class ReportLog {
                     String graph_bar = "";
 
                     graph_income = graph_income*100;
+
                     graph_income = graph_income/max_graph_income;
 
                     if (graph_income < 0) {

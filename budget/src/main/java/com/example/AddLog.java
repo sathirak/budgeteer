@@ -56,7 +56,22 @@ public class AddLog {
                 newEntry.put("amount", Math.abs(amount));
 
                 System.out.print("\n\u001b[32m[ > ]\u001B[0m category  > ");
-                newEntry.put("category", scanner.next());
+
+                getCategory();
+
+                String categoryShortcut;
+        
+                do {
+                    categoryShortcut = scanner.next();
+                    String fullCategory = getCategoryFromShortcut(categoryShortcut);
+        
+                    if (fullCategory != null) {
+                        newEntry.put("category", fullCategory);
+                        break;
+                    } else {
+                        System.out.print("\u001b[31m[ ! ]\u001B[0m  Please enter a valid category shortcut: ");
+                    }
+                } while (true);
 
                 System.out.print("\n\u001b[32m[ > ]\u001B[0m remarks  > ");
                 String remarks = scanner.nextLine().trim();
@@ -69,10 +84,10 @@ public class AddLog {
 
                 objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(file_path), jsonArray);
 
-                System.out.println("\n\u001b[31m[ ! ]  New entry added successfully.");
+                System.out.println("\n\u001b[31m[ ! ]\u001B[0m  New entry added successfully.");
 
             } else {
-                System.out.println("\u001b[31m[ ! ]  The JSON file does not contain an array.");
+                System.out.println("\u001b[31m[ ! ]\u001B[0m  The JSON file does not contain an array.");
             }
 
         } catch (IOException e) {
@@ -91,4 +106,55 @@ public class AddLog {
 
         return maxId + 1;
     }
+
+    private void getCategory() {
+        String categoriesFilePath = "meta.json";
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode categoriesJson = objectMapper.readTree(new File(categoriesFilePath));
+
+            if (categoriesJson.has("categories")) {
+
+                System.out.println("\n\u001b[30m");
+
+                categoriesJson.get("categories").fields().forEachRemaining(entry -> {
+                    System.out.println(entry.getKey() + " => " + entry.getValue().asText());
+                });
+
+                System.out.println("\n\u001B[0m");
+
+            } else {
+                System.out.println("\u001b[31m[ ! ]\u001B[0m  Invalid meta.json format.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String getCategoryFromShortcut(String shortcut) {
+        String categoriesFilePath = "meta.json";
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode categoriesJson = objectMapper.readTree(new File(categoriesFilePath));
+
+            if (categoriesJson.has("categories")) {
+                JsonNode categoryNode = categoriesJson.get("categories").get(shortcut);
+
+                if (categoryNode != null) {
+                    return categoryNode.asText();
+                } else {
+                    System.out.println("\u001b[31m[ ! ]\u001B[0m  Category shortcut not found.");
+                }
+            } else {
+                System.out.println("\u001b[31m[ ! ]\u001B[0m  Invalid meta.json format.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }

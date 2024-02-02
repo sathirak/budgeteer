@@ -21,15 +21,22 @@ public class Budgeteer {
     }
 
     public void scanLog() {
-        // Logic for showing log
+        // Logic for scanning log
         ScanLog scanLog = new ScanLog();
         scanLog.scanLog();
     }
 
     public void reportLog() {
-        // Logic for showing log
+        // Logic for report log
         ReportLog reportLog = new ReportLog();
         reportLog.reportLog();
     }
+
+    public void deleteLog() {
+        // Logic for deleting log
+        DeleteLog deleteLog = new DeleteLog();
+        deleteLog.deleteLog();
+    }
+    
 }
 
