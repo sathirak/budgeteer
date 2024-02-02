@@ -12,7 +12,7 @@
     </td>
     <td width="600" align="center" >
       <p>add budget log</p>
-      <img align="center"" alt="add budget log" src="README/Screenshot 2024-02-02 122033.png" height="300" width="auto" />
+      <img align="center" alt="add budget log" src="README/Screenshot 2024-02-02 122033.png" height="300" width="auto" />
     </td>
   </tr>
 
