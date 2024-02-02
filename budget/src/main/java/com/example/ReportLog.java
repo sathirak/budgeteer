@@ -15,10 +15,11 @@ import java.util.Locale;
 
 public class ReportLog {
 
-    public void reportLog() {
+    public void reportLog(String data_path) {
         try {
+            System.out.println(data_path);
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode jsonArray = objectMapper.readTree(new File("data.json"));
+            JsonNode jsonArray = objectMapper.readTree(new File(data_path));
 
             if (jsonArray.isArray()) {
                 Main.clear_screen();

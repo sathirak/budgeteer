@@ -11,9 +11,7 @@ import java.util.Scanner;
 
 public class DeleteLog {
 
-    public void deleteLog() {
-
-        String filePath = "data.json";
+    public void deleteLog(String data_path) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -21,7 +19,7 @@ public class DeleteLog {
 
             ObjectMapper objectMapper = new ObjectMapper();
 
-            ArrayNode jsonArray = (ArrayNode) objectMapper.readTree(new File(filePath));
+            ArrayNode jsonArray = (ArrayNode) objectMapper.readTree(new File(data_path));
 
             if (jsonArray.isArray()) {
 
@@ -50,7 +48,7 @@ public class DeleteLog {
                         iterator.remove();
 
                         // Write the updated array back to the file
-                        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath), jsonArray);
+                        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(data_path), jsonArray);
 
                         System.out.println("Log with ID " + id + " deleted successfully.");
 

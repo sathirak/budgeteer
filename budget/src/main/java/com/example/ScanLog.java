@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class ScanLog {
 
-    public void scanLog() {
+    public void scanLog(String data_path) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("\n\u001b[32m[ + ] Choose an option:\u001B[0m\n");
@@ -26,7 +26,7 @@ public class ScanLog {
 
         switch (choice) {
             case 1:
-                scanLogsByMonthAndYear();
+                scanLogsByMonthAndYear(data_path);
                 break;
             case 2:
                 // You can add any other options or actions here
@@ -36,7 +36,7 @@ public class ScanLog {
         }
     }
 
-    private void scanLogsByMonthAndYear() {
+    private void scanLogsByMonthAndYear(String data_path) {
 
         Scanner scanner = new Scanner(System.in);
         ObjectMapper objectMapper = new ObjectMapper();
@@ -61,10 +61,8 @@ public class ScanLog {
             month = Integer.parseInt(monthInput);
         }
 
-        String filePath = "data.json";
-
         try {
-            JsonNode jsonArray = objectMapper.readTree(new File(filePath));
+            JsonNode jsonArray = objectMapper.readTree(new File(data_path));
 
             if (jsonArray.isArray()) {
                 Main.clear_screen();
