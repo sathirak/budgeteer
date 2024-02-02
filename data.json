@@ -76,13 +76,6 @@
   "category" : "salary",
   "description" : "June salary"
 }, {
-  "id" : 14,
-  "date" : "2024-02-01",
-  "income" : false,
-  "amount" : 20.0,
-  "category" : "tyre",
-  "description" : ""
-}, {
   "id" : 15,
   "date" : "2024-02-01",
   "income" : true,
@@ -144,5 +137,12 @@
   "income" : true,
   "amount" : 3000.0,
   "category" : "Food",
+  "description" : ""
+}, {
+  "id" : 24,
+  "date" : "2024-02-02",
+  "income" : false,
+  "amount" : 100.0,
+  "category" : "other",
   "description" : ""
 } ]
