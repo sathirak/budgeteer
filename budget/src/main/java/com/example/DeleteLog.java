@@ -39,7 +39,7 @@ public class DeleteLog {
                         Main.clear_screen();
 
                         System.out.println("\n ");
-                        System.out.println("\u001b[30m     [ ### Deleting log with ID " + id + " ### ]   \u001B[0m");
+                        System.out.println("    [ ### Deleting log with ID " + id + " ### ]   ");
                         System.out.println("\n ");
                         System.out.println("\u001b[36m[ > ]\u001B[0m Deleting log with ID: " + id);
                         System.out.println();

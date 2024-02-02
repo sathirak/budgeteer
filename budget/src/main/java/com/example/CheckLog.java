@@ -45,7 +45,7 @@ public class CheckLog {
                         Main.clear_screen();
 
                         System.out.println("\n ");
-                        System.out.println("\u001b[30m     [ ###  details for log id " + id + "  ### ]   \u001B[0m");
+                        System.out.println("     [ ###  details for log id " + id + "  ### ]   ");
                         System.out.println("\n ");
                         System.out.println("\u001b[36m[ > ]\u001B[0m date      > " + date);
                         System.out.println("\u001b[36m[ > ]\u001B[0m income    > " + income);
