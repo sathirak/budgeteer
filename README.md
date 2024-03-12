@@ -1,5 +1,10 @@
 # budget-tracker
 
+
+<div align="center">
+  <img width="150" height="150" src="https://github.com/sathirak/budgeteer/assets/145209193/f601296f-86e4-4db4-a369-af9d7525bc67" />
+<div/>
+  
 ### simple budget tracking app for my personal needs
 
 
